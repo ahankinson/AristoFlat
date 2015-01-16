@@ -1,0 +1,368 @@
+$CPThemeSystemFontFamily: "Source Sans Pro" sans-serif;
+$CPThemeSystemFontSize: 13.0px;
+
+$CPThemeControlDefaultBackgroundColor: #ecf0f1;
+$CPThemeControlDefaultFontColor: #555555;
+$CPThemeControlDefaultHoverBackground: darken($CPThemeControlDefaultBackgroundColor, 10%);
+$CPThemeControlDefaultActiveBackground: darken($CPThemeControlDefaultBackgroundColor, 20%);
+$CPThemeControlDefaultBorderColor: #bdc3c7;
+$CPThemeControlDefaultBorderWidth: 1px;
+$CPThemeControlDefaultBorderRadius: 4px;
+$CPThemeControlRoundedBorderRadius: 20px;
+
+// for first responders / default action controls
+$CPThemeControlHighlightedBackgroundColor: #3498db;
+$CPThemeControlHighlightedBorderColor: #2980b9;
+$CPThemeControlHighlightedHoverBackground: darken($CPThemeControlHighlightedBackgroundColor, 10%);
+$CPThemeControlHighlightedActiveBackground: darken($CPThemeControlHighlightedBackgroundColor, 20%);
+$CPThemeControlHighlightedFontColor: $CPThemeControlDefaultBackgroundColor;
+
+$CPThemeControlDefaultButtonHeight: 25px;
+$CPThemeControlSmallButtonHeight: 20px;
+$CPThemeControlMiniButtonHeight: 18px;
+
+$CPThemeControlTextFieldHeight: 25px;
+
+$CPThemeToolbarDefaultFontSize: 10px;
+
+$CPThemeDefaultShadowColor: #AAAAAA;
+$CPThemeMenuFontWeight: 600;
+$CPThemeMenuShadowYOffset: 1px;
+$CPThemeMenuShadowXOffset: 3px;
+$CPThemeMenuShadowBlur: 10px;
+
+
+body {
+  font: $CPThemeSystemFontSize $CPThemeSystemFontFamily;
+}
+
+.spacer {
+  height: 50px;
+}
+
+/* Buttons */
+.btn {
+  font-family: $CPThemeSystemFontFamily;
+  font-size: $CPThemeSystemFontSize;
+  background: $CPThemeControlDefaultBackgroundColor;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  height: $CPThemeControlDefaultButtonHeight;
+  border-radius: $CPThemeControlDefaultBorderRadius;
+  &:hover {
+    background: $CPThemeControlDefaultHoverBackground;
+  }
+  &:active {
+    background: $CPThemeControlDefaultActiveBackground;
+  }
+}
+
+.btn-rounded {
+  border-radius: $CPThemeControlRoundedBorderRadius + 15px;
+}
+
+.btn-small {
+  height: $CPThemeControlSmallButtonHeight;
+  font-size: $CPThemeSystemFontSize - 2px;
+}
+
+.btn-mini {
+  height: $CPThemeControlMiniButtonHeight;
+  font-size: $CPThemeSystemFontSize - 3px;
+}
+
+.btn-default {
+  color: $CPThemeControlHighlightedFontColor;
+  background: $CPThemeControlHighlightedBackgroundColor;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
+  &:hover {
+    background: $CPThemeControlHighlightedHoverBackground;
+  }
+  &:active {
+    background: $CPThemeControlHighlightedActiveBackground;
+  }
+}
+
+.btn-disabled {
+  color: lighten($CPThemeControlDefaultFontColor, 20%);
+  background: lighten($CPThemeControlDefaultBackgroundColor, 20%);
+  &:hover {
+    background: lighten($CPThemeControlDefaultBackgroundColor, 20%);
+  }
+  &:active {
+    background: lighten($CPThemeControlDefaultBackgroundColor, 20%);
+  }
+}
+
+.btn-default-disabled {
+  color: lighten($CPThemeControlHighlightedFontColor, 20%);
+  background: lighten($CPThemeControlHighlightedBackgroundColor, 20%);
+  border: $CPThemeControlDefaultBorderWidth solid lighten($CPThemeControlHighlightedBorderColor, 20%);
+  &:hover {
+    background: lighten($CPThemeControlHighlightedBackgroundColor, 20%);
+  }
+  &:active {
+    background: lighten($CPThemeControlHighlightedBackgroundColor, 20%);
+  }
+}
+
+/* Segmented Controls */
+.seg {
+  height: $CPThemeControlDefaultButtonHeight;
+  font-family: $CPThemeSystemFontFamily;
+  font-size: $CPThemeSystemFontSize;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  background: $CPThemeControlDefaultBackgroundColor;
+}
+
+.seg-left {
+  border-top-left-radius: $CPThemeControlDefaultBorderRadius;
+  border-bottom-left-radius: $CPThemeControlDefaultBorderRadius;
+  margin-right: 0;
+}
+
+.seg-middle {
+  margin: 0 0;
+}
+
+.seg-right {
+  border-top-right-radius: $CPThemeControlDefaultBorderRadius;
+  border-bottom-right-radius: $CPThemeControlDefaultBorderRadius;
+}
+
+.seg-active {
+  background: $CPThemeControlHighlightedBackgroundColor;
+  color: $CPThemeControlHighlightedFontColor;
+  border: $CPThemeControlHighlightedBorderColor;
+}
+
+
+/* Sliders */
+.slider-track {
+  width: 200px;
+  height: 6px;
+  border-radius: $CPThemeControlDefaultBorderRadius;
+  background: darken($CPThemeControlDefaultBackgroundColor, 20%);
+
+  .slider-handle {
+    width: 15px;
+    height: 15px;
+    border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+    background: $CPThemeControlDefaultBackgroundColor;
+    border-radius: 50%;
+
+    /* Demo purposes only */
+    position: relative;
+    top: -5px;
+    left: 80px;
+  }
+}
+
+.slider-circular {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  background: $CPThemeControlDefaultBackgroundColor;
+
+  .slider-dimple {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: darken($CPThemeControlDefaultBackgroundColor, 20%);
+    border: $CPThemeControlDefaultBorderWidth solid darken($CPThemeControlDefaultBorderColor, 10%);
+
+    /* Demo positions */
+    position: relative;
+    top: 20px;
+    left: 11px;
+  }
+}
+
+/* Input fields */
+.input {
+  width: 200px;
+  font-family: $CPThemeSystemFontFamily;
+  font-size: $CPThemeSystemFontSize;
+  height: $CPThemeControlTextFieldHeight;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  border-radius: $CPThemeControlDefaultBorderRadius;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.input-stepper, .input-dropdown {
+  width: 160px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.stepper-up, .stepper-down {
+  // we may need some chevron images here.
+  width: 19px;
+  height: 12px;
+  font-size: 8px;
+  text-align: center;
+  color: $CPThemeControlHighlightedFontColor;
+  background: $CPThemeControlHighlightedBackgroundColor;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
+
+  // Demo positioning
+  position: relative;
+  top: -27px;
+  left: 163px;
+}
+
+.stepper-up {
+  vertical-align: bottom;
+  border-top-right-radius: $CPThemeControlDefaultBorderRadius;
+  margin-bottom: 0;
+}
+
+.stepper-down {
+  vertical-align: top;
+  border-bottom-right-radius: $CPThemeControlDefaultBorderRadius;
+}
+
+.input-rounded {
+  border-radius: $CPThemeControlRoundedBorderRadius;
+  padding: 0 5px;
+}
+
+//.input-dropdown {
+//  width: 160px;
+//  border-top-right-radius: 0;
+//  border-bottom-right-radius: 0;
+//}
+
+.dropdown-down {
+  width: 19px;
+  height: 27px;
+  text-align: center;
+  content: "\9660";
+  background: $CPThemeControlHighlightedBackgroundColor;
+  color: $CPThemeControlHighlightedFontColor;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
+  border-top-right-radius: $CPThemeControlDefaultBorderRadius;
+  border-bottom-right-radius: $CPThemeControlDefaultBorderRadius;
+
+  /* Demo positioning */
+  position: relative;
+  top: -28px;
+  left: 163px;
+}
+
+/* Toolbar */
+.toolbar {
+  height: 56px;
+  background: $CPThemeControlDefaultBackgroundColor;
+  border-bottom: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+
+  .toolbar-icon {
+    float: left;
+    height: 56px;
+    width: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .img {
+      margin-top: 8px;
+      width: 56px;
+      text-align: center;
+      img {
+        height: 32px;
+      }
+    }
+
+    .label {
+      width: 56px;
+      text-align: center;
+      font-size: $CPThemeToolbarDefaultFontSize;
+    }
+  }
+
+  .toolbar-icon-disabled {
+    opacity: 0.5;
+  }
+
+  .toolbar-icon-selected {
+    background: darken($CPThemeControlDefaultBackgroundColor, 5%);
+    border-left: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+    border-right: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  }
+}
+
+/* Menu bar */
+.menubar {
+  height: 30px;
+  border-bottom: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  background: lighten($CPThemeControlDefaultBackgroundColor, 5%);
+
+  .menubar-item {
+    float: left;
+    margin: 8px 10px 0 10px;
+
+    .title {
+      font-weight: 600;
+      font-size: $CPThemeSystemFontSize;
+    }
+  }
+
+  .menubar-item-active {
+    float: left;
+    padding: 8px 10px 6px 10px;
+    background: $CPThemeControlHighlightedBackgroundColor;
+    border-left: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
+    border-right: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
+
+    .title {
+      font-weight: $CPThemeMenuFontWeight;
+      font-size: $CPThemeSystemFontSize;
+      color: $CPThemeControlHighlightedFontColor;
+    }
+  }
+}
+
+.menu {
+  position: relative;
+  background: lighten($CPThemeControlDefaultBackgroundColor, 5%);
+  box-shadow: $CPThemeMenuShadowXOffset $CPThemeMenuShadowYOffset $CPThemeMenuShadowBlur $CPThemeDefaultShadowColor;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  border-bottom-right-radius: $CPThemeControlDefaultBorderRadius;
+  border-bottom-left-radius: $CPThemeControlDefaultBorderRadius;
+
+  left: 202px;
+//  top: 30px;
+  width: 140px;
+  height: 66px;
+
+
+  .menu-item {
+    font-weight: $CPThemeMenuFontWeight;
+    width: 140px;
+    height: 22px;
+    margin: 0;
+
+    .menu-item-title {
+      padding-left: 6px;
+      margin-top: 6px;
+      width: 100px;
+    }
+    .menu-item-shortcut {
+      float: right;
+      text-align: center;
+      width: 30px;
+    }
+  }
+
+  .menu-item-active {
+    @extend .menu-item;
+    background: $CPThemeControlHighlightedBackgroundColor;
+    border-top: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
+
+    .menu-item-title, .menu-item-shortcut {
+      color: $CPThemeControlHighlightedFontColor;
+    }
+  }
+}
