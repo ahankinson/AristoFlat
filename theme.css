@@ -11,7 +11,7 @@ body {
   background: #ecf0f1;
   border: 1px solid #bdc3c7;
   height: 25px;
-  border-radius: 0px; }
+  border-radius: 2px; }
   .btn:hover {
     background: #cfd9db; }
   .btn:active {
@@ -63,16 +63,16 @@ body {
   background: #ecf0f1; }
 
 .seg-left {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   margin-right: 0; }
 
 .seg-middle {
   margin: 0 0; }
 
 .seg-right {
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px; }
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; }
 
 .seg-active {
   background: #3498db;
@@ -83,7 +83,7 @@ body {
 .slider-track {
   width: 200px;
   height: 6px;
-  border-radius: 0px;
+  border-radius: 2px;
   background: #b1c2c6; }
   .slider-track .slider-handle {
     width: 15px;
@@ -114,15 +114,23 @@ body {
     left: 11px; }
 
 /* Input fields */
+/* Disable the default focus ring */
+:focus {
+  /* -webkit-focus-ring-color = '#5B9DD9' */
+  outline: none; }
+
 .input {
   width: 200px;
   font-family: "Source Sans Pro" sans-serif;
   font-size: 13px;
   height: 25px;
   border: 1px solid #bdc3c7;
-  border-radius: 0px;
+  border-radius: 2px;
   padding-left: 2px;
   padding-right: 2px; }
+
+.input-focus-ring {
+  box-shadow: 0px 0px 5px 3px #5faee3; }
 
 .input-stepper, .input-dropdown {
   width: 160px;
@@ -143,12 +151,12 @@ body {
 
 .stepper-up {
   vertical-align: bottom;
-  border-top-right-radius: 0px;
+  border-top-right-radius: 2px;
   margin-bottom: 0; }
 
 .stepper-down {
   vertical-align: top;
-  border-bottom-right-radius: 0px; }
+  border-bottom-right-radius: 2px; }
 
 .input-rounded {
   border-radius: 20px;
@@ -162,8 +170,8 @@ body {
   background: #3498db;
   color: #ecf0f1;
   border: 1px solid #2980b9;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   /* Demo positioning */
   position: relative;
   top: -28px;
@@ -195,7 +203,7 @@ body {
   .toolbar .toolbar-icon-disabled {
     opacity: 0.5; }
   .toolbar .toolbar-icon-selected {
-    background: #dde4e6;
+    background: linear-gradient(to bottom, #ecf0f1, #dde4e6);
     border-left: 1px solid #bdc3c7;
     border-right: 1px solid #bdc3c7; }
 
@@ -226,8 +234,8 @@ body {
   background: #fbfcfc;
   box-shadow: 3px 1px 10px #AAAAAA;
   border: 1px solid #bdc3c7;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
   left: 202px;
   width: 140px;
   height: 66px; }
@@ -262,6 +270,8 @@ body {
     .table thead tr {
       height: 25px; }
       .table thead tr th {
+        font-weight: 600;
+        font-size: 13px;
         border-right: 1px solid #bdc3c7;
         border-bottom: 1px solid #bdc3c7;
         margin: 0;
@@ -270,9 +280,67 @@ body {
     height: 100px;
     overflow-y: auto; }
     .table tbody tr {
+      height: 25px;
       width: 400px;
       border-bottom: 1px solid #e6e9ea; }
       .table tbody tr td {
+        font-size: 13px;
+        padding-left: 4px;
         border: 0; }
+      .table tbody tr:nth-child(even) {
+        background: #f3f9fd; }
+
+/* Windows */
+.window {
+  width: 400px;
+  height: 300px;
+  box-shadow: 3px 1px 10px #AAAAAA;
+  border: 1px solid #bdc3c7;
+  border-radius: 2px;
+  clear: right; }
+  .window .window-titlebar, .window .window-titlebar-toolbar {
+    height: 30px;
+    background: #ecf0f1;
+    border-bottom: 1px solid #bdc3c7; }
+    .window .window-titlebar .window-title, .window .window-titlebar-toolbar .window-title {
+      font-weight: 600;
+      display: block;
+      padding-top: 6px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80px;
+      text-align: center; }
+    .window .window-titlebar .window-controls .control, .window .window-titlebar-toolbar .window-controls .control, .window .window-titlebar .window-controls .close, .window .window-titlebar-toolbar .window-controls .close, .window .window-titlebar .window-controls .minimize, .window .window-titlebar-toolbar .window-controls .minimize, .window .window-titlebar .window-controls .maximize, .window .window-titlebar-toolbar .window-controls .maximize {
+      float: left;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
+      position: relative;
+      left: 10px; }
+      .window .window-titlebar .window-controls .control img, .window .window-titlebar-toolbar .window-controls .control img, .window .window-titlebar .window-controls .close img, .window .window-titlebar-toolbar .window-controls .close img, .window .window-titlebar .window-controls .minimize img, .window .window-titlebar-toolbar .window-controls .minimize img, .window .window-titlebar .window-controls .maximize img, .window .window-titlebar-toolbar .window-controls .maximize img {
+        position: relative;
+        top: -4px;
+        left: 1px;
+        width: 7px;
+        opacity: 0.0; }
+        .window .window-titlebar .window-controls .control img:hover, .window .window-titlebar-toolbar .window-controls .control img:hover, .window .window-titlebar .window-controls .close img:hover, .window .window-titlebar-toolbar .window-controls .close img:hover, .window .window-titlebar .window-controls .minimize img:hover, .window .window-titlebar-toolbar .window-controls .minimize img:hover, .window .window-titlebar .window-controls .maximize img:hover, .window .window-titlebar-toolbar .window-controls .maximize img:hover {
+          opacity: 0.5; }
+    .window .window-titlebar .window-controls .close, .window .window-titlebar-toolbar .window-controls .close {
+      background: #e74c3c;
+      border: 1px solid #d62c1a;
+      text-align: center;
+      top: 10px; }
+    .window .window-titlebar .window-controls .minimize, .window .window-titlebar-toolbar .window-controls .minimize {
+      background: #f1c40f;
+      border: 1px solid #c29d0b;
+      left: 14px;
+      top: 10px; }
+    .window .window-titlebar .window-controls .maximize, .window .window-titlebar-toolbar .window-controls .maximize {
+      background: #27ae60;
+      border: 1px solid #1e8449;
+      left: 18px;
+      top: 10px; }
+  .window .window-titlebar-toolbar {
+    border-bottom: 0; }
 
 /*# sourceMappingURL=theme.css.map */

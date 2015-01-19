@@ -7,7 +7,7 @@ $CPThemeControlDefaultHoverBackground: darken($CPThemeControlDefaultBackgroundCo
 $CPThemeControlDefaultActiveBackground: darken($CPThemeControlDefaultBackgroundColor, 20%);
 $CPThemeControlDefaultBorderColor: #bdc3c7;
 $CPThemeControlDefaultBorderWidth: 1px;
-$CPThemeControlDefaultBorderRadius: 0px;
+$CPThemeControlDefaultBorderRadius: 2px;
 $CPThemeControlRoundedBorderRadius: 20px;
 
 // for first responders / default action controls
@@ -31,6 +31,9 @@ $CPThemeMenuShadowYOffset: 1px;
 $CPThemeMenuShadowXOffset: 3px;
 $CPThemeMenuShadowBlur: 10px;
 
+$CPThemeWindowCloseControlColor: #e74c3c;
+$CPThemeWindowMinimizeControlColor: #f1c40f;
+$CPThemeWindowMaximizeControlColor: #27ae60;
 
 body {
   font: $CPThemeSystemFontSize $CPThemeSystemFontFamily;
@@ -179,6 +182,13 @@ body {
 }
 
 /* Input fields */
+
+/* Disable the default focus ring */
+:focus {
+  /* -webkit-focus-ring-color = '#5B9DD9' */
+  outline: none;
+}
+
 .input {
   width: 200px;
   font-family: $CPThemeSystemFontFamily;
@@ -188,6 +198,10 @@ body {
   border-radius: $CPThemeControlDefaultBorderRadius;
   padding-left: 2px;
   padding-right: 2px;
+}
+
+.input-focus-ring {
+  box-shadow: 0px 0px 5px 3px lighten($CPThemeControlHighlightedBackgroundColor, 10%);
 }
 
 .input-stepper, .input-dropdown {
@@ -287,7 +301,7 @@ body {
   }
 
   .toolbar-icon-selected {
-    background: darken($CPThemeControlDefaultBackgroundColor, 5%);
+    background: linear-gradient(to bottom, $CPThemeControlDefaultBackgroundColor, darken($CPThemeControlDefaultBackgroundColor, 5%));
     border-left: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
     border-right: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
   }
@@ -379,6 +393,8 @@ body {
     tr {
       height: 25px;
       th {
+        font-weight: $CPThemeMenuFontWeight;
+        font-size: $CPThemeSystemFontSize;
         border-right: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
         border-bottom: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
         margin: 0;
@@ -391,11 +407,98 @@ body {
     height: 100px;
     overflow-y: auto;
     tr {
+      height: 25px;
       width: 400px;
       border-bottom: $CPThemeControlDefaultBorderWidth solid lighten($CPThemeControlDefaultBorderColor, 15%);
       td {
+        font-size: $CPThemeSystemFontSize;
+        padding-left: 4px;
         border: 0;
       }
+
+      &:nth-child(even) {
+        background: lighten($CPThemeControlHighlightedBackgroundColor, 44%);
+      }
     }
+  }
+}
+
+
+/* Windows */
+.window {
+  width: 400px;
+  height: 300px;
+  box-shadow: $CPThemeMenuShadowXOffset $CPThemeMenuShadowYOffset $CPThemeMenuShadowBlur $CPThemeDefaultShadowColor;
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+  border-radius: $CPThemeControlDefaultBorderRadius;
+  clear: right;
+
+  .window-titlebar {
+    height: 30px;
+    background: $CPThemeControlDefaultBackgroundColor;
+    border-bottom: $CPThemeControlDefaultBorderWidth solid $CPThemeControlDefaultBorderColor;
+
+
+    .window-title {
+      font-weight: $CPThemeMenuFontWeight;
+
+      display: block;
+      padding-top: 6px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80px;
+      text-align: center;
+    }
+
+    .window-controls {
+      .control {
+        float: left;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        position: relative;
+        left: 10px;
+
+        img {
+          position: relative;
+          top: -4px;
+          left: 1px;
+          width: 7px;
+          opacity: 0.0;
+
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
+      .close {
+        @extend .control;
+        background: $CPThemeWindowCloseControlColor;
+        border: $CPThemeControlDefaultBorderWidth solid darken($CPThemeWindowCloseControlColor, 10%);
+        text-align: center;
+        top: 10px;
+      }
+
+      .minimize {
+        @extend .control;
+        background: $CPThemeWindowMinimizeControlColor;
+        border: $CPThemeControlDefaultBorderWidth solid darken($CPThemeWindowMinimizeControlColor, 10%);
+        left: 14px;
+        top: 10px;
+      }
+
+      .maximize {
+        @extend .control;
+        background: $CPThemeWindowMaximizeControlColor;
+        border: $CPThemeControlDefaultBorderWidth solid darken($CPThemeWindowMaximizeControlColor, 10%);
+        left: 18px;
+        top: 10px;
+      }
+    }
+  }
+
+  .window-titlebar-toolbar {
+    @extend .window-titlebar;
+    border-bottom: 0;
   }
 }
