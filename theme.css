@@ -11,14 +11,14 @@ body {
   background: #ecf0f1;
   border: 1px solid #bdc3c7;
   height: 25px;
-  border-radius: 2px; }
+  border-radius: 0px; }
   .btn:hover {
     background: #cfd9db; }
   .btn:active {
     background: #b1c2c6; }
 
 .btn-rounded {
-  border-radius: 35px; }
+  border-radius: 8px; }
 
 .btn-small {
   height: 20px;
@@ -29,7 +29,7 @@ body {
   font-size: 10px; }
 
 .btn-default {
-  color: #ecf0f1;
+  color: white;
   background: #3498db;
   border: 1px solid #2980b9; }
   .btn-default:hover {
@@ -38,12 +38,12 @@ body {
     background: #196090; }
 
 .btn-disabled {
-  color: #888888;
-  background: white; }
+  color: #b8b8b8;
+  background: whitesmoke; }
   .btn-disabled:hover {
-    background: white; }
+    background: whitesmoke; }
   .btn-disabled:active {
-    background: white; }
+    background: whitesmoke; }
 
 .btn-default-disabled {
   color: white;
@@ -63,27 +63,28 @@ body {
   background: #ecf0f1; }
 
 .seg-left {
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
-  margin-right: 0; }
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  margin-right: -5px; }
 
 .seg-middle {
   margin: 0 0; }
 
 .seg-right {
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px; }
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 15px; }
 
 .seg-active {
   background: #3498db;
-  color: #ecf0f1;
+  color: white;
   border: #2980b9; }
 
 /* Sliders */
 .slider-track {
   width: 200px;
   height: 6px;
-  border-radius: 2px;
+  border-radius: 0px;
   background: #b1c2c6; }
   .slider-track .slider-handle {
     width: 15px;
@@ -125,12 +126,12 @@ body {
   font-size: 13px;
   height: 25px;
   border: 1px solid #bdc3c7;
-  border-radius: 2px;
+  border-radius: 0px;
   padding-left: 2px;
   padding-right: 2px; }
 
 .input-focus-ring {
-  box-shadow: 0px 0px 5px 3px #5faee3; }
+  border: 1px solid #3498db; }
 
 .input-stepper, .input-dropdown {
   width: 160px;
@@ -139,43 +140,73 @@ body {
 
 .stepper-up, .stepper-down {
   width: 19px;
-  height: 12px;
+  height: 13px;
   font-size: 8px;
   text-align: center;
-  color: #ecf0f1;
   background: #3498db;
   border: 1px solid #2980b9;
   position: relative;
-  top: -27px;
-  left: 163px; }
+  top: -29px;
+  left: 165px; }
 
 .stepper-up {
   vertical-align: bottom;
-  border-top-right-radius: 2px;
+  border-top-right-radius: 0px;
   margin-bottom: 0; }
 
 .stepper-down {
   vertical-align: top;
-  border-bottom-right-radius: 2px; }
+  border-bottom-right-radius: 0px;
+  top: -30px; }
+
+.stepper-up-value {
+  width: 19px;
+  height: 12px;
+  font-size: 8px;
+  text-align: center;
+  color: white;
+  position: relative;
+  top: -55px;
+  left: 166px; }
+
+.stepper-down-value {
+  width: 19px;
+  height: 12px;
+  font-size: 8px;
+  text-align: center;
+  color: white;
+  position: relative;
+  top: -54px;
+  left: 166px; }
 
 .input-rounded {
-  border-radius: 20px;
+  border-radius: 8px;
   padding: 0 5px; }
 
 .dropdown-down {
   width: 19px;
   height: 27px;
   text-align: center;
-  content: "\9660";
   background: #3498db;
-  color: #ecf0f1;
+  color: white;
   border: 1px solid #2980b9;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
   /* Demo positioning */
   position: relative;
-  top: -28px;
-  left: 163px; }
+  top: -29px;
+  left: 165px; }
+
+.dropdown-down-value {
+  width: 19px;
+  height: 27px;
+  text-align: center;
+  content: "\9660";
+  color: white;
+  /* Demo positioning */
+  position: relative;
+  top: -50px;
+  left: 166px; }
 
 /* Toolbar */
 .toolbar {
@@ -227,15 +258,15 @@ body {
     .menubar .menubar-item-active .title {
       font-weight: 600;
       font-size: 13px;
-      color: #ecf0f1; }
+      color: white; }
 
 .menu {
   position: relative;
   background: #fbfcfc;
-  box-shadow: 3px 1px 10px #AAAAAA;
+  box-shadow: 3px 1px 10px #aaaaaa;
   border: 1px solid #bdc3c7;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
   left: 202px;
   width: 140px;
   height: 66px; }
@@ -256,7 +287,7 @@ body {
     background: #3498db;
     border-top: 1px solid #2980b9; }
     .menu .menu-item-active .menu-item-title, .menu .menu-item-active .menu-item-shortcut {
-      color: #ecf0f1; }
+      color: white; }
 
 /* Tables */
 .table {
@@ -290,13 +321,15 @@ body {
       .table tbody tr:nth-child(even) {
         background: #f3f9fd; }
 
+/* Radio */
+/* What about the first theme of this example : http://fronteed.com/iCheck/ ? */
 /* Windows */
 .window {
   width: 400px;
   height: 300px;
-  box-shadow: 3px 1px 10px #AAAAAA;
+  box-shadow: 3px 1px 10px #aaaaaa;
   border: 1px solid #bdc3c7;
-  border-radius: 2px;
+  border-radius: 0px;
   clear: right; }
   .window .window-titlebar, .window .window-titlebar-toolbar {
     height: 30px;
@@ -310,20 +343,20 @@ body {
       margin-right: auto;
       width: 80px;
       text-align: center; }
-    .window .window-titlebar .window-controls .control, .window .window-titlebar-toolbar .window-controls .control, .window .window-titlebar .window-controls .close, .window .window-titlebar-toolbar .window-controls .close, .window .window-titlebar .window-controls .minimize, .window .window-titlebar-toolbar .window-controls .minimize, .window .window-titlebar .window-controls .maximize, .window .window-titlebar-toolbar .window-controls .maximize {
+    .window .window-titlebar .window-controls .control, .window .window-titlebar-toolbar .window-controls .control, .window .window-titlebar .window-controls .close, .window .window-titlebar-toolbar .window-titlebar .window-controls .close, .window .window-titlebar .window-titlebar-toolbar .window-controls .close, .window .window-titlebar .window-titlebar-toolbar .window-controls .close, .window .window-titlebar-toolbar .window-titlebar .window-controls .close, .window .window-titlebar-toolbar .window-controls .close, .window .window-titlebar .window-controls .minimize, .window .window-titlebar-toolbar .window-titlebar .window-controls .minimize, .window .window-titlebar .window-titlebar-toolbar .window-controls .minimize, .window .window-titlebar .window-titlebar-toolbar .window-controls .minimize, .window .window-titlebar-toolbar .window-titlebar .window-controls .minimize, .window .window-titlebar-toolbar .window-controls .minimize, .window .window-titlebar .window-controls .maximize, .window .window-titlebar-toolbar .window-titlebar .window-controls .maximize, .window .window-titlebar .window-titlebar-toolbar .window-controls .maximize, .window .window-titlebar .window-titlebar-toolbar .window-controls .maximize, .window .window-titlebar-toolbar .window-titlebar .window-controls .maximize, .window .window-titlebar-toolbar .window-controls .maximize {
       float: left;
       border-radius: 50%;
       width: 10px;
       height: 10px;
       position: relative;
       left: 10px; }
-      .window .window-titlebar .window-controls .control img, .window .window-titlebar-toolbar .window-controls .control img, .window .window-titlebar .window-controls .close img, .window .window-titlebar-toolbar .window-controls .close img, .window .window-titlebar .window-controls .minimize img, .window .window-titlebar-toolbar .window-controls .minimize img, .window .window-titlebar .window-controls .maximize img, .window .window-titlebar-toolbar .window-controls .maximize img {
+      .window .window-titlebar .window-controls .control img, .window .window-titlebar-toolbar .window-controls .control img, .window .window-titlebar .window-controls .close img, .window .window-titlebar-toolbar .window-titlebar .window-controls .close img, .window .window-titlebar .window-titlebar-toolbar .window-controls .close img, .window .window-titlebar .window-titlebar-toolbar .window-controls .close img, .window .window-titlebar-toolbar .window-titlebar .window-controls .close img, .window .window-titlebar-toolbar .window-controls .close img, .window .window-titlebar .window-controls .minimize img, .window .window-titlebar-toolbar .window-titlebar .window-controls .minimize img, .window .window-titlebar .window-titlebar-toolbar .window-controls .minimize img, .window .window-titlebar .window-titlebar-toolbar .window-controls .minimize img, .window .window-titlebar-toolbar .window-titlebar .window-controls .minimize img, .window .window-titlebar-toolbar .window-controls .minimize img, .window .window-titlebar .window-controls .maximize img, .window .window-titlebar-toolbar .window-titlebar .window-controls .maximize img, .window .window-titlebar .window-titlebar-toolbar .window-controls .maximize img, .window .window-titlebar .window-titlebar-toolbar .window-controls .maximize img, .window .window-titlebar-toolbar .window-titlebar .window-controls .maximize img, .window .window-titlebar-toolbar .window-controls .maximize img {
         position: relative;
         top: -4px;
         left: 1px;
         width: 7px;
         opacity: 0.0; }
-        .window .window-titlebar .window-controls .control img:hover, .window .window-titlebar-toolbar .window-controls .control img:hover, .window .window-titlebar .window-controls .close img:hover, .window .window-titlebar-toolbar .window-controls .close img:hover, .window .window-titlebar .window-controls .minimize img:hover, .window .window-titlebar-toolbar .window-controls .minimize img:hover, .window .window-titlebar .window-controls .maximize img:hover, .window .window-titlebar-toolbar .window-controls .maximize img:hover {
+        .window .window-titlebar .window-controls .control img:hover, .window .window-titlebar-toolbar .window-controls .control img:hover, .window .window-titlebar .window-controls .close img:hover, .window .window-titlebar-toolbar .window-titlebar .window-controls .close img:hover, .window .window-titlebar .window-titlebar-toolbar .window-controls .close img:hover, .window .window-titlebar .window-titlebar-toolbar .window-controls .close img:hover, .window .window-titlebar-toolbar .window-titlebar .window-controls .close img:hover, .window .window-titlebar-toolbar .window-controls .close img:hover, .window .window-titlebar .window-controls .minimize img:hover, .window .window-titlebar-toolbar .window-titlebar .window-controls .minimize img:hover, .window .window-titlebar .window-titlebar-toolbar .window-controls .minimize img:hover, .window .window-titlebar .window-titlebar-toolbar .window-controls .minimize img:hover, .window .window-titlebar-toolbar .window-titlebar .window-controls .minimize img:hover, .window .window-titlebar-toolbar .window-controls .minimize img:hover, .window .window-titlebar .window-controls .maximize img:hover, .window .window-titlebar-toolbar .window-titlebar .window-controls .maximize img:hover, .window .window-titlebar .window-titlebar-toolbar .window-controls .maximize img:hover, .window .window-titlebar .window-titlebar-toolbar .window-controls .maximize img:hover, .window .window-titlebar-toolbar .window-titlebar .window-controls .maximize img:hover, .window .window-titlebar-toolbar .window-controls .maximize img:hover {
           opacity: 0.5; }
     .window .window-titlebar .window-controls .close, .window .window-titlebar-toolbar .window-controls .close {
       background: #e74c3c;
@@ -342,5 +375,3 @@ body {
       top: 10px; }
   .window .window-titlebar-toolbar {
     border-bottom: 0; }
-
-/*# sourceMappingURL=theme.css.map */
