@@ -73,7 +73,7 @@ body {
 .seg-right {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
-  margin-right: 15px; }
+  margin-left: -3px; }
 
 .seg-active {
   background: #3498db;
