@@ -7,15 +7,18 @@ $CPThemeControlDefaultHoverBackground: darken($CPThemeControlDefaultBackgroundCo
 $CPThemeControlDefaultActiveBackground: darken($CPThemeControlDefaultBackgroundColor, 20%);
 $CPThemeControlDefaultBorderColor: #bdc3c7;
 $CPThemeControlDefaultBorderWidth: 1px;
-$CPThemeControlDefaultBorderRadius: 2px;
-$CPThemeControlRoundedBorderRadius: 20px;
+$CPThemeControlDefaultBorderRadius: 0px;
+$CPThemeControlRoundedBorderRadius: 8px;
+
+$CPThemeControlDisableDefaultFontColor: #B8B8B8;
+$CPThemeControlDisableDefaultBackgroundColor: #f5f5f5;
 
 // for first responders / default action controls
 $CPThemeControlHighlightedBackgroundColor: #3498db;
 $CPThemeControlHighlightedBorderColor: #2980b9;
 $CPThemeControlHighlightedHoverBackground: darken($CPThemeControlHighlightedBackgroundColor, 10%);
 $CPThemeControlHighlightedActiveBackground: darken($CPThemeControlHighlightedBackgroundColor, 20%);
-$CPThemeControlHighlightedFontColor: $CPThemeControlDefaultBackgroundColor;
+$CPThemeControlHighlightedFontColor: #ffffff;
 
 $CPThemeControlDefaultButtonHeight: 25px;
 $CPThemeControlSmallButtonHeight: 20px;
@@ -60,7 +63,7 @@ body {
 }
 
 .btn-rounded {
-  border-radius: $CPThemeControlRoundedBorderRadius + 15px;
+  border-radius: $CPThemeControlRoundedBorderRadius;
 }
 
 .btn-small {
@@ -86,13 +89,13 @@ body {
 }
 
 .btn-disabled {
-  color: lighten($CPThemeControlDefaultFontColor, 20%);
-  background: lighten($CPThemeControlDefaultBackgroundColor, 20%);
+  color: $CPThemeControlDisableDefaultFontColor;
+  background: $CPThemeControlDisableDefaultBackgroundColor;
   &:hover {
-    background: lighten($CPThemeControlDefaultBackgroundColor, 20%);
+    background: $CPThemeControlDisableDefaultBackgroundColor;
   }
   &:active {
-    background: lighten($CPThemeControlDefaultBackgroundColor, 20%);
+    background: $CPThemeControlDisableDefaultBackgroundColor;
   }
 }
 
@@ -120,7 +123,7 @@ body {
 .seg-left {
   border-top-left-radius: $CPThemeControlDefaultBorderRadius;
   border-bottom-left-radius: $CPThemeControlDefaultBorderRadius;
-  margin-right: 0;
+  margin-right: -5px;
 }
 
 .seg-middle {
@@ -130,6 +133,7 @@ body {
 .seg-right {
   border-top-right-radius: $CPThemeControlDefaultBorderRadius;
   border-bottom-right-radius: $CPThemeControlDefaultBorderRadius;
+  margin-left: -4px;
 }
 
 .seg-active {
@@ -201,7 +205,7 @@ body {
 }
 
 .input-focus-ring {
-  box-shadow: 0px 0px 5px 3px lighten($CPThemeControlHighlightedBackgroundColor, 10%);
+  border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBackgroundColor;
 }
 
 .input-stepper, .input-dropdown {
@@ -213,17 +217,16 @@ body {
 .stepper-up, .stepper-down {
   // we may need some chevron images here.
   width: 19px;
-  height: 12px;
+  height: 13px;
   font-size: 8px;
   text-align: center;
-  color: $CPThemeControlHighlightedFontColor;
   background: $CPThemeControlHighlightedBackgroundColor;
   border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
 
   // Demo positioning
   position: relative;
-  top: -27px;
-  left: 163px;
+  top: -29px;
+  left: 165px;
 }
 
 .stepper-up {
@@ -235,7 +238,28 @@ body {
 .stepper-down {
   vertical-align: top;
   border-bottom-right-radius: $CPThemeControlDefaultBorderRadius;
+  top: -30px;
 }
+
+.stepper-up-value {
+    width: 19px;
+    height: 12px;
+    font-size: 8px;
+    text-align: center;
+    color: $CPThemeControlHighlightedFontColor;
+    position: relative;
+    top: -55px;
+    left: 166px; }
+
+.stepper-down-value {
+    width: 19px;
+    height: 12px;
+    font-size: 8px;
+    text-align: center;
+    color: $CPThemeControlHighlightedFontColor;
+    position: relative;
+    top: -54px;
+    left: 166px; }
 
 .input-rounded {
   border-radius: $CPThemeControlRoundedBorderRadius;
@@ -252,7 +276,6 @@ body {
   width: 19px;
   height: 27px;
   text-align: center;
-  content: "\9660";
   background: $CPThemeControlHighlightedBackgroundColor;
   color: $CPThemeControlHighlightedFontColor;
   border: $CPThemeControlDefaultBorderWidth solid $CPThemeControlHighlightedBorderColor;
@@ -261,9 +284,20 @@ body {
 
   /* Demo positioning */
   position: relative;
-  top: -28px;
-  left: 163px;
+  top: -29px;
+  left: 165px;
 }
+
+.dropdown-down-value {
+    width: 19px;
+    height: 27px;
+    text-align: center;
+    content: "\9660";
+    color: $CPThemeControlHighlightedFontColor;
+    /* Demo positioning */
+    position: relative;
+    top: -50px;
+    left: 166px; }
 
 /* Toolbar */
 .toolbar {
@@ -423,6 +457,34 @@ body {
   }
 }
 
+/* Radio */
+
+/* What about the first theme of this example : http://fronteed.com/iCheck/ ? */
+.radio
+{
+
+}
+
+.checkbox
+{
+
+}
+
+.radio-checked{
+
+}
+
+.radio-unchecked{
+
+}
+
+.checkbox-checked{
+
+}
+
+.checkbox-unchecked{
+
+}
 
 /* Windows */
 .window {
